@@ -1,3 +1,4 @@
+import { Navbar } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,13 +7,21 @@ export const metadata: Metadata = {
     keywords: ["About", "Description", "Keywords"],
 };
 
-export default function AboutLayoust({
+export default function GeneralLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return <main className="flex flex-col items-center p-24">
-        <span className="text-lg">About layout</span>
-        {children}
-    </main>;
+    return (
+        <>
+            <Navbar />
+
+            <main className="flex flex-col items-center p-24">
+                <span className="text-lg">Hola mundo</span>
+                {children}
+            </main>
+        </>
+
+
+    );
 }

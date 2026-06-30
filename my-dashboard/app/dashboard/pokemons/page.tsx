@@ -18,12 +18,17 @@ export default async function PokemonsPage() {
 
     return (
         <div className="flex flex-col">
-            <Image
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/132.svg`}
-                width={100}
-                height={100}
-                alt="nombre"
-            />
+            {
+                pokemons.map(pokemon => (
+                    <Image
+                        key={pokemon.id}
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
+                        width={100}
+                        height={100}
+                        alt={pokemon.name}
+                    />
+                ))
+            }
         </div>
     )
 }

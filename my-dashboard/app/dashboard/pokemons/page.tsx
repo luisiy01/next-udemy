@@ -1,4 +1,5 @@
 import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
+import { cacheTag, revalidateTag } from "next/cache";
 
 export const metadata = {
     title: '151 Pokémons',
@@ -22,6 +23,14 @@ const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => 
 
 
 export default async function PokemonsPage() {
+
+
+    'use cache';
+
+    cacheTag('pokemons')
+
+    revalidateTag('pokemons', 'max')
+
     const pokemons = await getPokemons(151)
 
     return (

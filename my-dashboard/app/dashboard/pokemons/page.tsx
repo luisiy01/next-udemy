@@ -26,16 +26,16 @@ export default async function PokemonsPage() {
 
 
     'use cache';
-
-    cacheTag('pokemons')
-
-    revalidateTag('pokemons', 'max')
+    /* 
+        cacheTag('pokemons')
+    
+        revalidateTag('pokemons', 'max') */
 
     const pokemons = await getPokemons(151)
 
     return (
         <div className="flex flex-col">
-            <span className="text-2xl my-2">Listado de Pokémons<small>estatico</small></span>
+            <span className="text-2xl my-2">Listado de Pokémons<small className="text-blue-500">estatico</small></span>
 
             <PokemonGrid pokemons={pokemons} />
         </div>

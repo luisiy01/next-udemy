@@ -6,6 +6,7 @@ const menuItems = [
     { path: '/dashboard/main', icon: <IoBrowsersOutline />, title: 'Dashboard', subtitle: 'Vizualiacion' },
     { path: '/dashboard/counter', icon: <IoCalculator />, title: 'Counter', subtitle: 'Contador Client Side' },
     { path: '/dashboard/pokemons', icon: <IoFootball />, title: 'Pokemons', subtitle: 'Generacion Estatica' },
+    { path: '/dashboard/favorites', icon: <IoPawOutline />, title: 'Favoritos', subtitle: 'Generacion Estatica' },
 ]
 
 export const Sidebar = () => {

@@ -1,26 +1,21 @@
 'use client'
 import { useAppSelector } from "@/store";
-import { addOne, subtractOne } from "@/store/counter/counterSlice";
+import { addOne, initCounterState, subtractOne } from "@/store/counter/counterSlice";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 interface Props {
     value?: number;
 }
 
-export const CartCounter = ({ value = 10 }: Props) => {
+export const CartCounter = ({ value = 0 }: Props) => {
 
     const count = useAppSelector(state => state.counter.count)
     const dispatch = useDispatch()
 
-    function incrementByOne(): any {
-        throw new Error("Function not implemented.");
-    }
-
-    function subOne(): any {
-        throw new Error("Function not implemented.");
-    }
-
-    //const [count, setCount] = useState(value);
+    useEffect(() => {
+        dispatch(initCounterState(value))
+    }, [dispatch, value])
     return (
         <>
             <span className="text-9xl">{count}</span>
